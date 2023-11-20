@@ -13,33 +13,56 @@
 //#include <stdlib.h>
 #include <stdio.h>
 //clear;norminette;gcc -Wall -Wextra -Werror ft_putnbr_base.c
+#include <unistd.h>
 
-char	*abinario(int n, char bits[])
+void	ft_putchar(char c)
 {
-	int		i;
-
-	i = 31;
-	while (n > 0)
-	{
-		bits[i] = n % 2 + '0';
-		i--;
-		n = n / 2;
-	}
-	return (bits);
+	write(1, &c, 1);
 }
 
-int	main(void)
+int	check_base(char *base)
 {
-	char	bits[32];
-	int		p;
-	int		i;
+	int	i;
 
 	i = 0;
-	while (i < 32)
+	while (base[i] != '\0')
 	{
-		bits[i] = '0';
+		if (base[i] == '+' || base[i] == '-' || base[i] == base[i + 1])
+			return (0);
 		i++;
 	}
-	p = 475;
-	printf("%s\n", abinario(p, bits));
+	if (i <= 1)
+		return (0);
+	return (1);
+}
+
+void	print_base_nb(int nbr, char *base, int size)
+{
+	char			a;
+	unsigned int	n;
+
+	if (nbr < 0)
+	{
+		write(1, "-", 1);
+		n = nbr * (-1);
+	}
+	else
+		n = nbr;
+	if (n >= (unsigned int)size)
+		print_base_nb(n / size, base, size);
+	a = base[n % size];
+	write(1, &a, 1);
+}
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	int	s;
+
+	s = 0;
+	if (check_base(base) == 1)
+	{
+		while (base[s] != '\0')
+			s++;
+		print_base_nb(nbr, base, s);
+	}
 }
