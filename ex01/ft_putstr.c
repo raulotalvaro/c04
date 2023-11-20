@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// clear;norminette;gcc -Wall -Wextra -Werror .\ft_putstr.c;
+// clear;norminette;gcc -Wall -Wextra -Werror ft_putstr.c
 #include <unistd.h>
 
 void	ft_putstr(char *str)
@@ -25,10 +25,10 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	main(int n, char *args[])
+/*int	main(int n, char *args[])
 {
 	if (n != 2)
 		return (0);
 	ft_putstr((args[1]));
 	return (0);
-}
+}*/

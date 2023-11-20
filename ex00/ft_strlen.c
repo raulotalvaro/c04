@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-
+//#include <stdio.h>
+//clear; gcc -Wall -Wextra -Werror ft_strlen.c
 int	ft_strlen(char *str)
 {
 	int	i;

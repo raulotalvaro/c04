@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
+//#include <stdlib.h>
+//#include <stdio.h>
+//clear;norminette;gcc -Wall -Wextra -Werror ft_atoi.c
 
 int	buscarsigno(char *str, int *ptr_i)
 {

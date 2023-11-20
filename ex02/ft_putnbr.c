@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// clear;norminette;gcc -Wall -Wextra -Werror .\ft_putnbr.c;
+// clear;norminette;gcc -Wall -Wextra -Werror ft_putnbr.c
+//#include <stdlib.h>
 #include <unistd.h>
 
 void	ft_putchar(char a)
